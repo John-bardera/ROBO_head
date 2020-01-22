@@ -29,3 +29,8 @@ npm-debug.log*
 /platforms
 /plugins
 /www
+
+*.mp3
+*.png
+*.jpg
+

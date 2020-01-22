@@ -1,14 +1,37 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+<div #main class="app-home" [class.blue-screen]="mode === 'blue'" [style.background]="isColor ? '#698D9C' : 'white'">
+  <div
+    [class.content-wrapper]="activate"
+    [style.animation-duration]="activate ? noiseDuration.toString(10) + 's' : '0s'"
+    [style.opacity]="noiseDuration === 0 ? '1' : 'auto'"
+  >
+    <ng-container [ngSwitch]="mode">
+      <div *ngSwitchCase="'blue'"></div>
+      <div class="face-wrapper" *ngSwitchCase="'face'">
+        <img class="face" src="../../assets/img/face{{contentId}}.png" alt="face" />
+      </div>
+      <div *ngSwitchCase="'music'"></div>
+      <div class="text-wrapper" *ngSwitchCase="'text'">
+        <ng-container [ngSwitch]="input">
+          <div *ngSwitchCase="4">
+            Twitterに<br>上げてもらっていいよ！！！
+          </div>
+          <div *ngSwitchCase="5">
+            follow @John_bardera
+          </div>
+          <div *ngSwitchCase="6">
+            にゃーん。
+          </div>
+          <div *ngSwitchCase="7">
+            CytusのROBO_Headで検索して
+          </div>
+          <div *ngSwitchCase="8">
+            は？キレそう
+          </div>
+          <div *ngSwitchCase="9">
+            チヂミ一つください
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
   </div>
-</ion-content>
+</div>

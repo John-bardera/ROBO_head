@@ -1,1 +1,80 @@
+.app-home {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.blue-screen {
+    background-image: url("/assets/img/bluescreen.png");
+    background-size: 100% 100%;
+  }
+  .content-wrapper {
+    opacity: 0;
+    position: absolute;
+    animation: noise-3 1s linear infinite;
+    .text-wrapper {
+      text-align: center;
+      font-size: 80px;
+      font-weight: bold;
+    }
+  }
+}
 
+@-webkit-keyframes noise-1 {
+  0%, 20%, 40%, 60%, 70%, 90% {opacity: 0;}
+  10% {opacity: .1;}
+  50% {opacity: .5; transform: translateX(-6px); }
+  80% {opacity: .3;}
+  100% {opacity: .6; transform: translateX(-2px);}
+}
+
+@keyframes noise-1 {
+  0%, 20%, 40%, 60%, 70%, 90% {opacity: 0;}
+  10% {opacity: .1;}
+  50% {opacity: .5; transform: translateX(-6px);}
+  80% {opacity: .3;}
+  100% {opacity: .6; transform: translateX(-2px);}
+}
+
+@-webkit-keyframes noise-2 {
+  0%, 20%, 40%, 60%, 70%, 90% {opacity: 0;}
+  10% {opacity: .1;}
+  50% {opacity: .5; transform: translateX(6px);}
+  80% {opacity: .3;}
+  100% {opacity: .6; transform: translateX(-2px);}
+}
+
+@keyframes noise-2 {
+  0%, 20%, 40%, 60%, 70%, 90% {opacity: 0;}
+  10% {opacity: .1;}
+  50% {opacity: .5; transform: translateX(6px);}
+  80% {opacity: .3;}
+  100% {opacity: .6; transform: translateX(-2px);}
+}
+
+@-webkit-keyframes noise {
+  0%, 3%, 5%, 42%, 44%, 100% {opacity: 1; -webkit-transform: scaleY(1); transform: scaleY(1);}
+  4.3% {opacity: 1; -webkit-transform: scaleY(1.7); transform: scaleY(1.7);}
+  43% {opacity: 1; -webkit-transform: scaleX(1.5); transform: scaleX(1.5);}
+}
+
+@keyframes noise {
+  0%, 3%, 5%, 42%, 44%, 100% {opacity: 1; -webkit-transform: scaleY(1); transform: scaleY(1);}
+  4.3% {opacity: 1; -webkit-transform: scaleY(1.7); transform: scaleY(1.7);}
+  43% {opacity: 1; -webkit-transform: scaleX(1.5); transform: scaleX(1.5);}
+}
+
+@-webkit-keyframes noise-3 {
+  0%,3%,5%,42%,44%,89%,90%,100% {opacity: 1; -webkit-transform: scaleY(1); transform: scaleY(1);}
+  4.3% {opacity: 0.1; -webkit-transform: scaleY(4); transform: scaleY(4);}
+  43% {opacity: 0.1; -webkit-transform: scaleX(6) rotate(60deg); transform: scaleX(6) rotate(60deg);}
+  89.2% {opacity: 0.1; -webkit-transform: translateX(32px); transform: translateX(32px);}
+}
+
+@keyframes noise-3 {
+  0%,3%,5%,42%,44%,89%,90%,100% {opacity: 1; -webkit-transform: scaleY(1); transform: scaleY(1);}
+  4.3% {opacity: 0.1; -webkit-transform: scaleY(4); transform: scaleY(4);}
+  43% {opacity: 0.1; -webkit-transform: scaleX(6) rotate(60deg); transform: scaleX(6) rotate(60deg);}
+  89.2% {opacity: 0.1; -webkit-transform: translateX(32px); transform: translateX(32px);}
+}
